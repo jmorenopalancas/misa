@@ -1,0 +1,119 @@
+@font-face {
+  font-family: 'Centabel Book';
+  src: url('fonts/Centabel_Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Centabel Book', serif; /* Use 'serif' as a fallback */
+  /*font-size: 1.86em;*/
+  /*font-size: 5.5vw;*/
+  font-size: 1rem;
+  background-color:beige;
+  touch-action: pan-y; /* Esto es porque iPhone no permite el scroll correcto sin esto */
+}
+
+.header{
+  position: fixed;
+  z-index: 99;
+  right: 5px;
+  top: 5px;
+  font-size: 0.7em;
+  opacity: 1;
+  transition: 
+    transform 0.3s ease-in-out, 
+    opacity 0.3s ease-in-out;
+}
+
+/* Hide header when scrolling down on mobile */
+.header.header-hidden {
+  transform: translateY(-125%);
+  opacity: 0;
+}
+
+/* Only apply scroll behavior on small screens (mobile) */
+@media (max-width: 768px) {
+  .header {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+}
+
+.header div {
+  vertical-align: top;
+
+  display: inline-block;
+  text-align: left;
+}
+
+div.bloque {
+  margin-top: 20px;
+  border-bottom: 1px solid darkred;
+}
+
+.bloque h4 {
+  color:darkred;
+  margin-bottom:-0px;
+  font-size: 20px;
+}
+
+.title {
+  font-family: 'Candara', 'Lato', sans-serif;
+}
+
+h3 {
+  color:black;
+  margin-top: 10px;
+  font-size:27px;
+}
+
+.priest {
+  font-style: italic;
+}
+.people {
+  font-weight: bold;
+}
+p.comment{
+  color: darkred;
+  font-size: small;
+  font-style: italic;
+  text-indent: 0px;
+}
+.priest:before {
+  content: "V.";
+  font-style: normal;
+  color:darkred;
+  margin-right: 6px;
+}
+
+.people:before {
+  content: "R.";
+  font-style: normal;
+  color:darkred;
+  margin-right: 6px;
+}
+
+.hide, .always-hidden, p.gospel strong{
+  visibility: hidden;
+  display:none;
+}
+
+p { /* revisar esto */
+  text-indent: -30px;
+  padding-left: 30px;
+}
+
+.lecturas, .lecturas p, .psalm, .gospel, .gospel p {
+  text-indent: 0px;
+  padding-left: 0px;
+}
+
+button:disabled {
+  filter: grayscale(100%);
+  opacity: 1.0;
+}
+
+.emphasis, .cruz {
+	font-weight:bold;
+	color:red;
+}
